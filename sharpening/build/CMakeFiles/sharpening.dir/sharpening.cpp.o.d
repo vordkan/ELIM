@@ -1,4 +1,5 @@
-CMakeFiles/es_3.dir/es_3.cpp.o: /home/matt/Documenti/ELIM/es_2/es_3.cpp \
+CMakeFiles/sharpening.dir/sharpening.cpp.o: \
+ /home/matt/Documenti/ELIM/sharpening/sharpening.cpp \
  /usr/include/stdc-predef.h /usr/local/include/opencv4/opencv2/opencv.hpp \
  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/local/include/opencv4/opencv2/core.hpp \

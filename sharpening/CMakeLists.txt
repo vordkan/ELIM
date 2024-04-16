@@ -5,10 +5,10 @@ project(OpenCV_Test)
 find_package(OpenCV REQUIRED)
 
 # Aggiungi l'eseguibile del tuo programma
-add_executable(es_3 es_3.cpp)
+add_executable(sharpening sharpening.cpp)
 
 # Collega OpenCV al tuo programma
-target_link_libraries(es_3 ${OpenCV_LIBS})
+target_link_libraries(sharpening ${OpenCV_LIBS})
 
 # Include le directory di inclusione di OpenCV solo per il target es_1
-target_include_directories(es_3 PRIVATE ${OpenCV_INCLUDE_DIRS})
+target_include_directories(sharpening PRIVATE ${OpenCV_INCLUDE_DIRS})

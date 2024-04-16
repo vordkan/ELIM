@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/matt/Documenti/ELIM/es_2
+CMAKE_SOURCE_DIR = /home/matt/Documenti/ELIM/sharpening
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matt/Documenti/ELIM/es_2/build
+CMAKE_BINARY_DIR = /home/matt/Documenti/ELIM/sharpening/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documenti/ELIM/es_2/build/CMakeFiles /home/matt/Documenti/ELIM/es_2/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documenti/ELIM/sharpening/build/CMakeFiles /home/matt/Documenti/ELIM/sharpening/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documenti/ELIM/es_2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/Documenti/ELIM/sharpening/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named es_3
+# Target rules for targets named sharpening
 
 # Build rule for target.
-es_3: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 es_3
-.PHONY : es_3
+sharpening: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sharpening
+.PHONY : sharpening
 
 # fast build rule for target.
-es_3/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/es_3.dir/build.make CMakeFiles/es_3.dir/build
-.PHONY : es_3/fast
+sharpening/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sharpening.dir/build.make CMakeFiles/sharpening.dir/build
+.PHONY : sharpening/fast
 
-es_3.o: es_3.cpp.o
-.PHONY : es_3.o
+sharpening.o: sharpening.cpp.o
+.PHONY : sharpening.o
 
 # target to build an object file
-es_3.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/es_3.dir/build.make CMakeFiles/es_3.dir/es_3.cpp.o
-.PHONY : es_3.cpp.o
+sharpening.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sharpening.dir/build.make CMakeFiles/sharpening.dir/sharpening.cpp.o
+.PHONY : sharpening.cpp.o
 
-es_3.i: es_3.cpp.i
-.PHONY : es_3.i
+sharpening.i: sharpening.cpp.i
+.PHONY : sharpening.i
 
 # target to preprocess a source file
-es_3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/es_3.dir/build.make CMakeFiles/es_3.dir/es_3.cpp.i
-.PHONY : es_3.cpp.i
+sharpening.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sharpening.dir/build.make CMakeFiles/sharpening.dir/sharpening.cpp.i
+.PHONY : sharpening.cpp.i
 
-es_3.s: es_3.cpp.s
-.PHONY : es_3.s
+sharpening.s: sharpening.cpp.s
+.PHONY : sharpening.s
 
 # target to generate assembly for a file
-es_3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/es_3.dir/build.make CMakeFiles/es_3.dir/es_3.cpp.s
-.PHONY : es_3.cpp.s
+sharpening.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sharpening.dir/build.make CMakeFiles/sharpening.dir/sharpening.cpp.s
+.PHONY : sharpening.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... es_3"
-	@echo "... es_3.o"
-	@echo "... es_3.i"
-	@echo "... es_3.s"
+	@echo "... sharpening"
+	@echo "... sharpening.o"
+	@echo "... sharpening.i"
+	@echo "... sharpening.s"
 .PHONY : help
 
 
