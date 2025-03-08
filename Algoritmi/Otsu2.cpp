@@ -31,12 +31,12 @@ int main(int argc, char **argv) {
         istogramma[i] /= (image.rows * image.cols);
     }
 
-    float mediaGlobale = 0.0f, // media cumulativa dell'istogramma
-           currVar, // varianza intraclasse attuale
-           maxVar = 0.0f; // massima varianza
-    vector<float> prob(3, 0.0f); // probabilità per un qualsiasi pixel di far parte di una delle 3 classi
-    vector<float> currMediaGlobale(3, 0.0f); // media cumulativa globale per ogni classe
-    vector<int> sogliaOttimale(2, 0); // due soglie
+    float mediaGlobale = 0.0f, 
+           currVar, 
+           maxVar = 0.0f; 
+    vector<float> prob(3, 0.0f); 
+    vector<float> currMediaGlobale(3, 0.0f); 
+    vector<int> sogliaOttimale(2, 0); 
 
     // calcolo la media globale
     for (int i = 0; i < istogramma.size(); i++) {
@@ -44,20 +44,20 @@ int main(int argc, char **argv) {
     }
 
     // calcolo la varianza tra le classi per ogni possibile valore
-    for (int i = 0; i < istogramma.size() - 2; i++) { // prima classe
-        prob[0] += istogramma[i]; // calcolo la probabilità che un pixel qualsiasi appartenga alla prima classe
-        currMediaGlobale[0] += (i + 1) * istogramma[i]; // calcolo la media cumulativa per la prima classe
-        for (int j = i + 1; j < istogramma.size() - 1; j++) { // seconda classe
-            prob[1] += istogramma[j]; // calcolo la probabilità che un pixel qualsiasi appartenga alla seconda classe
-            currMediaGlobale[1] += (j + 1) * istogramma[j]; // calcolo la media cumulativa per la seconda classe
-            for (int k = j + 1; k < istogramma.size(); k++) { // terza classe
-                prob[2] += istogramma[k]; // calcolo la probabilità che un pixel qualsiasi appartenga alla terza classe
-                currMediaGlobale[2] += (k + 1) * istogramma[k]; // calcolo la media cumulativa per la seconda classe
+    for (int i = 0; i < istogramma.size() - 2; i++) {
+        prob[0] += istogramma[i]; 
+        currMediaGlobale[0] += (i + 1) * istogramma[i]; 
+        for (int j = i + 1; j < istogramma.size() - 1; j++) {
+            prob[1] += istogramma[j];
+            currMediaGlobale[1] += (j + 1) * istogramma[j]; 
+            for (int k = j + 1; k < istogramma.size(); k++) { 
+                prob[2] += istogramma[k]; 
+                currMediaGlobale[2] += (k + 1) * istogramma[k];
                 currVar = 0.0f;
-                for (int w = 0; w < 3; w++) { // calcolo la varianza corrente
+                for (int w = 0; w < 3; w++) {
                     currVar += prob[w] * pow(currMediaGlobale[w]/prob[w] - mediaGlobale, 2);
                 }
-                if (currVar > maxVar) { // aggiorno la varianza massima e le soglie se trovo una varianza migliore di quella massima calcolata finora
+                if (currVar > maxVar) { 
                     maxVar = currVar;
                     sogliaOttimale[0] = i;
                     sogliaOttimale[1] = j;

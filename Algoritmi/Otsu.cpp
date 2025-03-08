@@ -33,12 +33,12 @@ int main(int argc, char **argv) {
         istogramma[i] /= (image.rows * image.cols);
     }
 
-    float mediaGlobale = 0.0f, // media cumulativa dell'istogramma
-          prob = 0.0f, // probabilità che un pixel sia di una certa intensità
-          currMediaGlobale = 0.0f, // media cumulativa corrente
-          currVar = 0.0f, // varianza intraclasse attuale
-          maxVar = 0.0f; // massima varianza
-    int sogliaOttimale; // output del metodo di Otsu
+    float mediaGlobale = 0.0f, 
+          prob = 0.0f, 
+          currMediaGlobale = 0.0f, 
+          currVar = 0.0f, 
+          maxVar = 0.0f; 
+    int sogliaOttimale; 
 
     // calcolo la media globale
     for (int i = 0; i < istogramma.size(); i++) {
@@ -47,10 +47,10 @@ int main(int argc, char **argv) {
 
     // calcolo la varianza tra le classi per ogni possibile valore
     for (int i = 0; i < istogramma.size(); i++) {
-        prob += istogramma[i]; // calcolo la probabilità che un pixel rientri nella regione
-        currMediaGlobale += (i + 1) * istogramma[i]; // calcolo la media cumulativa
-        currVar = pow(mediaGlobale * prob - currMediaGlobale, 2) / (prob * (1 - prob)); // calcolo la varianza corrente
-        if (currVar > maxVar) { // aggiorno la soglia ottimale e la varianza massima se la varianza corrente è maggiore di quella massima trovata finora
+        prob += istogramma[i]; 
+        currMediaGlobale += (i + 1) * istogramma[i];
+        currVar = pow(mediaGlobale * prob - currMediaGlobale, 2) / (prob * (1 - prob)); 
+        if (currVar > maxVar) {
             maxVar = currVar;
             sogliaOttimale = i;
         }
